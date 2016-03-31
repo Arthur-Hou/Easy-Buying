@@ -1,56 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09ad21dc-897f-4884-99b2-01d1b6b1bc23" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/css/hovertreewelcome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/css/lanrenzhijia.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/css/least.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/css/lrtk.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/css/style1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/detail.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/Tea.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/Thai-Rice.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/banana-chips.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/banana.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/bananas-index.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/bottom.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/coffee-beans.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/coffee-index.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/coffee.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/fruit-index.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/grey.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/left-handing.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/left_hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/longon-index.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/northendcoffee.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/password.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/rice-en.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/rice-index.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/rice-of-thailand.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/rice.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/right_hand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/right_handing.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/right_nav.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/tea-index.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/thai-longan.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/tou.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/images/username.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/js/clock.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/js/hovertreewelcome.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/js/jquery-1.5.1.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/js/jquery-2.1.1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/js/title.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Easy-Buying/register.html" afterPath="" />
-    </list>
+    <list default="true" id="09ad21dc-897f-4884-99b2-01d1b6b1bc23" name="Default" comment="" />
     <ignored path="Easy-Buying.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -72,10 +23,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Easy-Buying.iml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Easy-Buying.iml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Easy-Buying.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.8461539">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -105,8 +76,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="579" />
-    <option name="y" value="46" />
+    <option name="x" value="75" />
+    <option name="y" value="98" />
     <option name="width" value="863" />
     <option name="height" value="625" />
   </component>
@@ -605,16 +576,16 @@
       <created>1459413121862</created>
       <option name="number" value="Default" />
       <updated>1459413121862</updated>
-      <workItem from="1459413133309" duration="1223000" />
+      <workItem from="1459413133309" duration="1599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1223000" />
+    <option name="totallyTimeSpent" value="1599000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="579" y="46" width="863" height="625" extended-state="0" />
-    <editor active="false" />
+    <frame x="75" y="98" width="863" height="625" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -624,7 +595,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37308148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37308148" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -648,7 +619,39 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.bowerrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Easy-Buying.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8461539">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
