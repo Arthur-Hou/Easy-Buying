@@ -1,6 +1,5 @@
 package camt.se331.shoppingcart.config;
 
-import camt.se331.shoppingcart.dao.ShoppingCartDao;
 import camt.se331.shoppingcart.entity.*;
 import camt.se331.shoppingcart.repository.ProductRepository;
 import camt.se331.shoppingcart.repository.ShoppingCartRepository;
@@ -29,16 +28,16 @@ public class DatabaseInitializationBean implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
         Product[] initProduct = {
-                new Product(1l, "Kindle", "the good book reader", 6900.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/x.png"), 200)),
-                new Product(2l, "Surface Pro", "The unknow computer", 34000.00, ImageUtil.getImage("pic/x.png")),
-                new Product(3l, "Mac pro", " Mac book interim", 44000.00, ImageUtil.getImage("pic/x.png")),
-                new Product(4l, "Candle", "use for lightenup the world", 10.00, ImageUtil.getImage("pic/x.png")),
-                new Product(5l, "Bin", "User for what ?", 200.00, ImageUtil.getImage("pic/x.png")),
-                new Product(6l, "Telephone", "Call the others", 150.00, ImageUtil.getImage("pic/x.png")),
-                new Product(7l, "iPhone", "What is it?", 26000.00, ImageUtil.getImage("pic/x.png")),
-                new Product(8l, "Galaxy Note 4", "Who still use this ?", 24000.00, ImageUtil.getImage("pic/x.png")),
-                new Product(9l, "AngularJS", "we hate it", 2000.00, ImageUtil.getImage("pic/x.png")),
-                new Product(10l, "Mazda 3", "Very handsome guy use this", 300000.00, ImageUtil.getImage("pic/x.png"))
+                new Product(1l, "Rice", "Natural , with fibrous texture and appetising flavour.", 100.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/rice1.png"), 200)),
+                new Product(2l, "Stevia glass", "Sweet herb,natural,home-produced", 70.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/Steviaglass.png"), 200)),
+                new Product(3l, "White chrysanthemum tea", "Serve the fresh flower fragrance from the source garden", 60.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/Whitechrysanthemumtea.png"), 200)),
+                new Product(4l, "Banana chip", "Your delicious bites nurture the forest.", 50.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/bananaship1.png"), 200)),
+                new Product(5l, "Hugpa coffee", " People preserves the forest and the forest preserves the earth.", 180.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/hugpacoffee.png"), 200)),
+                new Product(6l, "Champoo", "Safe for your hands, cure your hair and nourish your skin.", 50.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/champoo1.png"), 200)),
+                new Product(7l, "Soap", " a natural treatment for all skin types", 50.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/Soap1.png"), 200)),
+                new Product(8l, "ยาเขียว", "สมุนไพรในการผลิตรับชื้อจากกลุ่มแม่บ้านและชาวบ้านในชุมชนอมลอง",60.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/bottle.png"), 200)),
+                new Product(9l, "ข้าวกล้องดอย", "Brown rice", 50.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/rice2.png"), 200)),
+                new Product(10l, "ข้าวขาว", "GABA rice", 40.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/rice3.png"), 200))
         };
         productRepository.save(Arrays.asList(initProduct));
 
@@ -61,6 +60,9 @@ public class DatabaseInitializationBean implements InitializingBean {
         Role adminRole = new Role("admin");
         Role userRole = new Role("user");
         Role ForeignUserRole = new Role("ForeignUser");
+        Role CustomerRole = new Role("Customer");
+        Role WholeSaleRole = new Role("WholeSale");
+        Role RetailRole = new Role("Retail");
 
 
         User admin = new User();
@@ -71,8 +73,9 @@ public class DatabaseInitializationBean implements InitializingBean {
         Set<Role> roles = new HashSet<>();
         roles.add(adminRole);
         admin.setRoles(roles);
+        userRepository.save(admin);
 
-        User user = new User();
+      /*  User user = new User();
         user.setName("user");
         user.setUsername("user");
         user.setEmail("user@yahoo.com");
@@ -83,9 +86,9 @@ public class DatabaseInitializationBean implements InitializingBean {
         userRepository.save(admin);
         userRepository.save(user);
         admin.setRoles(roles);
-        user.setRoles(roles2);
+        user.setRoles(roles2);*/
 
-        User ForeignUser = new User();
+        /*User ForeignUser = new User();
         ForeignUser.setName("ForeignUser");
         ForeignUser.setUsername("ForeignUser");
         ForeignUser.setEmail("user@yahoo.com");
@@ -93,9 +96,44 @@ public class DatabaseInitializationBean implements InitializingBean {
         Set<Role> roles3 = new HashSet<>();
         roles3.add(ForeignUserRole);
         ForeignUser.setRoles(roles3);
-
         userRepository.save(ForeignUser);
         admin.setRoles(roles);
-        ForeignUser.setRoles(roles3);
+        ForeignUser.setRoles(roles3);*/
+
+        User Customer = new User();
+        Customer.setName("Customer");
+        Customer.setUsername("Customer");
+        Customer.setEmail("user@yahoo.com");
+        Customer.setPassword("123456");
+        Set<Role> roles4 = new HashSet<>();
+        roles4.add(CustomerRole);
+        Customer.setRoles(roles4);
+        userRepository.save(Customer);
+        admin.setRoles(roles);
+        Customer.setRoles(roles4);
+
+        User WholeSale = new User();
+        WholeSale.setName("WholeSale");
+        WholeSale.setUsername("WholeSale");
+        WholeSale.setEmail("user@yahoo.com");
+        WholeSale.setPassword("123456");
+        Set<Role> roles5 = new HashSet<>();
+        roles5.add(WholeSaleRole);
+        WholeSale.setRoles(roles5);
+        userRepository.save(WholeSale);
+        admin.setRoles(roles);
+        WholeSale.setRoles(roles5);
+
+        User Retail = new User();
+        Retail.setName("Retail");
+        Retail.setUsername("Retail");
+        Retail.setEmail("user@yahoo.com");
+        Retail.setPassword("123456");
+        Set<Role> roles6 = new HashSet<>();
+        roles6.add(RetailRole);
+        Retail.setRoles(roles6);
+        userRepository.save(Retail);
+        admin.setRoles(roles);
+        Retail.setRoles(roles6);
     }
 }

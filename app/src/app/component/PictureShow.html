@@ -1,47 +1,81 @@
 <div class="wbox">
   <div class="slide_box clearfix">
     <div class="Jslide" id="Jslide">
-      <div class="slide-list" id="slide-list">
-        <div class="slide-ul" style="display:block;">
-          <ul>
-            <li class="w1" style="display:block;"><a href="#" class="a_0" title="" rel="nofollow" target="_blank">
-              <div ng-repeat="image in product.images" class="text-center" class="thumbnail">
-              <img ng-src="data:{{image.contentType}};base64,{{image.content}}">
+
+    <!--  <div>
+        <carousel interval="myInterval">
+          <slide ng-repeat="slide in slides" active="slide.active">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <p>{{slide.text}}</p>
             </div>
-              <!--<img src="images/7.jpg" width="100%"big-src="images/7.jpg" min-src="images/7.jpg" alt="" />--></a>
+          </slide>
+        </carousel>
+      </div>-->
+
+      <div class="slide-list" id="slide-list">
+
+<!--
+
+         <div class="slide-ul" >&lt;!&ndash;ng-repeat="product in vm.products" >&ndash;&gt;
+          <ul >&lt;!&ndash;ng-repeat="image in product.images"&ndash;&gt;>
+            <li class="w1" style="display:block;" >
+              <a href="#" class="a_0" title="" rel="nofollow" target="_blank"></a>
+              &lt;!&ndash;<img ng-src="data:{{image.contentType}};base64,{{image.content}}">&ndash;&gt;
+              <img src="images/0.jpg" width="100%" big-src="images/0.jpg" min-src="images/0.jpg" alt="" />
             </li>
           </ul>
-        </div>
+         </div>
+-->
+        <!--Today's-->
         <div class="slide-ul">
           <ul>
             <li class="w1" style="display:block;">
-              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/northendcoffee.jpg" width="100%" min-src="northendcoffee.jpg" alt="" /></a>
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/coffee-beans.jpg" width="100%" min-src="images/coffee-beans.jpg"  /></a>
             </li>
             <li class="w1" style="display:block;">
-              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/northendcoffee.jpg"  width="100%" min-src="images/northendcoffee.jpg" alt="" /></a>
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/coffee-beans.jpg"  width="100%" min-src="images/coffee-beans.jpg" alt="" /></a>
             </li>
           </ul>
         </div>
+
+        <!--Coffee-->
         <div class="slide-ul">
           <ul>
             <li class="w1" style="display:block;">
-              <a href="#"  class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/bananas-index.jpg"  width="100%" min-src="images/bananas-index.jpg" alt="" /></a>
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/hugpacoffee.png" width="100%" min-src="images/hugpacoffee.png"  /></a>
             </li>
             <li class="w1" style="display:block;">
-              <a href="#"  class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/bananas-index.jpg"  width="100%"min-src="images/bananas-index.jpg" alt="" /></a>
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/hugpacoffee.png"  width="100%" min-src="" alt="images/hugpacoffee.png" /></a>
             </li>
           </ul>
         </div>
+
+        <!--Banana-->
         <div class="slide-ul">
           <ul>
             <li class="w1" style="display:block;">
-              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/tea-index.jpg"  width="100%" min-src="images/tea-index.jpg" alt="" /></a>
+              <a href="#"  class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/banana-chips.jpg"  width="100%" min-src="images/banana-chips.jpg" alt="" /></a>
             </li>
             <li class="w1" style="display:block;">
-              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/tea-index.jpg" width="100%" min-src="images/tea-index.jpg" alt="" /></a>
+              <a href="#"  class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/banana-chips.jpg"  width="100%"min-src="images/banana-chips.jpg" alt="" /></a>
             </li>
           </ul>
         </div>
+
+       <!-- Tea-->
+        <div class="slide-ul">
+          <ul>
+            <li class="w1" style="display:block;">
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/Whitechrysanthemumtea.png"  width="100%" min-src="images/Whitechrysanthemumtea.png" alt="" /></a>
+            </li>
+            <li class="w1" style="display:block;">
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/Whitechrysanthemumtea.png" width="100%" min-src="images/Whitechrysanthemumtea.png" alt="" /></a>
+            </li>
+          </ul>
+        </div>
+
+        <!--Rice-->
         <div class="slide-ul">
           <ul>
             <li class="w1" style="display:block;">
@@ -52,27 +86,37 @@
             </li>
           </ul>
         </div>
+
+        <!--Champoo-->
         <div class="slide-ul">
           <ul>
             <li class="w1" style="display:block;">
-              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/longon-index.jpg" width="100%" min-src="images/longon-index.jpg" alt="" /></a>
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/champoo1.png" width="100%" min-src="images/champoo1.png" alt="" /></a>
             </li>
             <li class="w1" style="display:block;">
-              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/longon-index.jpg" width="100%" min-src="images/longon-index.jpg" alt="" /></a>
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/champoo1.png" width="100%" min-src="images/champoo1.png" alt="" /></a>
             </li>
           </ul>
         </div>
+
+        <!--Soap-->
         <div class="slide-ul">
           <ul>
             <li class="w1" style="display:block;">
-              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/fruit-index.jpg" width="100%" min-src="images/fruit-index.jpg" alt="" /></a>
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/Soap1.png" width="100%" min-src="images/Soap1.png" alt="" /></a>
             </li>
             <li class="w1" style="display:block;">
-              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/fruit-index.jpg" width="100%" min-src="images/fruit-index.jpg" alt="" /></a>
+              <a href="#" rel="nofollow" class="a_0" title="" target="_blank"><img src="images/grey.gif" data-src="1" big-src="images/Soap1.png" width="100%" min-src="images/Soap1.png" alt="" /></a>
             </li>
           </ul>
         </div>
       </div>
+
+
+
+
+
+
       <ul class="slide-tab" id="slide-tab">
         <li class="current" >
           <div class="text">
@@ -131,7 +175,7 @@
         <li  >
           <div class="text">
             <em></em>
-            <span>Longan</span>
+            <span>Champoo</span>
             <div class="num"></div>
           </div>
           <div class="item">
@@ -142,7 +186,7 @@
         <li  >
           <div class="text">
             <em></em>
-            <span>Fruit</span>
+            <span>Soap</span>
             <div class="num"></div>
           </div>
           <div class="item">

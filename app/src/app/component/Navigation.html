@@ -1,39 +1,125 @@
-<div class="mass">
-  <div data-spm="a2226mz" id="site-nav" style="top: 0px; position: fixed;width:82.5%" role="navigation">
+<style type="text/css">
+  .XYTipsWindow .boxLoading { position: absolute; display: block; width: 90px; height: 30px; line-height: 30px; margin-left: -45px; margin-top: -15px; left: 50%; top: 50%; color: #f00; }
+  .XYTipsWindow .boxLoading { width:28px; margin-left: -14px; background:url("/app/src/app/security/images/loading.gif") no-repeat; text-indent: -999em; text-align: center; }
+  .XYTipsWindow .boxTitle, .XYTipsWindow .boxTitle span, .XYTipsWindow .boxTitle span.hover, .XYTipsWindow .loadinglayer, .XYTipsWindow .tipslayer, .XYTipsWindow .arrowLeft, .XYTipsWindow .colseBtn, .XYTipsWindow .boxError em, .XYTipsWindow .dialogBtn, .XYTipsWindow .dialogBtn.hover { background-image: url("images/ico.png"); background-repeat: no-repeat; }
+  .XYTipsWindow .boxTitle { position: relative; border: 1px solid #A6C9E1; border-bottom: none; background-position: 0 0; background-repeat: repeat-x; height: 30px; line-height: 30px; }
+  .XYTipsWindow .boxTitle h3 { float: left; font-weight: normal; color: #666; font-size: 14px; margin: 0; text-indent: 10px; }
+  .XYTipsWindow .boxTitle span { position: absolute; width: 10px; background-position: -80px -40px; text-indent: -10em; right: 10px; top: 10px; height: 16px; overflow: hidden; cursor: pointer; }
+  .XYTipsWindow .boxTitle span.hover { background-position: -90px -40px; }
+  .XYTipsWindow .loadinglayer { line-height: 40px; background-position: 0 -100px!important; }
+  .XYTipsWindow .tipslayer { line-height: 20px; text-align: left; }
+  .XYTipsWindow .arrowLeft { position: absolute; width: 8px; height: 16px; background-position: -20px -170px; text-indent: -9999em; z-index: 20591; overflow: hidden; }
+  .XYTipsWindow .colseBtn { position: absolute; top: 5px; right: 5px; width: 8px; height: 8px; background-position: -55px -170px; text-indent: -9999em; cursor: pointer; z-index: 20591; overflow: hidden; }
+  .XYTipsWindow .boxError { position: absolute; left: 50%; top: 50%; margin-left: -60px; margin-top: -15px; width: 120px; height: 30px; line-height: 30px; color: #f00; }
+  .XYTipsWindow .boxError em { float: left; width:30px; height: 30px; background-position: -35px -140px; }
+  .XYTipsWindow .dialogBtn { margin: 5px 5px 0 0; width:80px; height:35px; background-position: 0 -30px; border:none; color:#333; }
+  .XYTipsWindow .dialogBtn.hover { background-position: 0 -65px; }
+  .XYTipsWindow.shadow { box-shadow:2px 2px 5px #C0BBB5; -moz-box-shadow: 2px 2px 5px #C0BBB5; -webkit-box-shadow:2px 2px 5px #C0BBB5; }
+</style>
+<script type="text/javascript" src="app/security/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="app/security/js/jquery.XYTipsWindow.min.2.8.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $("#login").click(function(){
+      $.XYTipsWindow({
+        ___title:"Login",
+        ___content:"iframe:app/security/login.html",
+        ___width:"460",
+        ___height:"150",
+        ___showbg:true,
+        ___drag:"___boxTitle"
+
+      });
+    });
+
+    $("#reg").click(function(){
+      $.XYTipsWindow({
+        ___title:"Register",
+        ___content:"iframe:app/security/reg.html",
+        ___width:"460",
+        ___height:"450",
+        ___showbg:true,
+        ___drag:"___boxTitle"
+      });
+    });
+  })
+</script>
+
+<div class="mass" ng-controller="LoginController as login">
+  <div data-spm="a2226mz" id="site-nav" style="top: 0px; position: fixed; width: 85%;height: 35px; margin-left: -35px;" role="navigation">
     <div id="sn-bg">
       <div class="sn-bg-right">
       </div>
     </div>
     <div id="sn-bd">
       <b class="sn-edge"></b>
-      <div class="sn-container">
-        <p class="sn-login-info" id="login-info" style="margin-left:-900px;"><em>welcome</em>--
-          <a id="j-login" href="" class="f-fr j-nav-loginBtn">Login</a>
-          <a target="_top" href="" class="sn-register">Sign Up</a></p>
+      <div class="sn-container" style="margin-top: 5px;">
+        <!--<p class="sn-login-info" id="login-info" style="margin-left:-900px;"><em style="margin-left: -80px;">welcome</em>&#45;&#45;</p>-->
+          <!--<a id="login" class="f-fr j-nav-loginBtn">Login</a>
+          <a id="reg" target="_top" class="sn-register">Sign Up</a></p>-->
+        <div class="col-md-9 col-md-offset-4" style="margin-left: -250px; padding-left: 0px;padding-right: 0px;" ng-controller="LoginController as login">
+          <form class="form-inline" ng-hide="user">
+            <div class="form-group " style="width: 120px;">
+              <label for="username" class="col-sm-3 control-label"><font color="#999" style="font-weight:normal;margin-left: -29px;margin-bottom: -2px;">Username:</font></label>
+              <div class="col-sm-3">
+                <input id="username" ng-model="login.username" type="text" class="form-control" style="height: 18px;width: 80px;margin-left:5px;margin-bottom: -2px;padding: 0px;"/>
+              </div>
+            </div>
+            <div class="form-group"  style="width: 120px;">
+              <label for="password" class="col-sm-3 control-label"><font color="#999" style="font-weight:normal;margin-bottom: -2px;">Password:</font></label>
+              <div class="col-sm-3">
+                <input id="password" ng-model="login.password" type="password" class="form-control" style="height: 18px;width: 80px;margin-left:30px;margin-bottom: -2px;padding: 0px;"/>
+              </div>
+            </div>
+            <div class="form-group"  style="width: 120px;">
+              <div class="col-sm-3 col-sm-offset-3">
+                <input type="submit" value="Log In" class="btn btn-primary" ng-click="login.login()" style="height: 18px;width: 80px;margin-bottom: -2px;padding:0px 0px;background-color:#f2f2f2;border-color: #999 #999;border-width:1px;"/>
+              </div>
+            </div>
+            <!-- <div class="form-group">
+               <div class="col-sm-offset-9 col-sm-9">
+                 <div class="checkbox">
+                   <label>
+                     <input type="checkbox" ng-model="login.rememberMe"> Remember me
+                   </label>
+                 </div>
+               </div>
+             </div>-->
+          </form>
+          <form class="form-inline" ng-show="user">
+            <div class="H6 col-sm-5 col-sm-offset-3 text-right" style="margin-left:-30px; margin-top:6px;">
+              Hello !!! {{user.name}}
+            </div>
+            <div class="form-group">
+              <div class="col-sm-3 ">
+                <input type="submit" value="Log Out" class="btn btn-primary" ng-click="logout()" style="height: 20px;width: 80px;margin-bottom: -2px;margin-left:-300px;padding:0px;background-color:#f2f2f2;border-color: #999 #999;border-width:1px;"/>
+              </div>
+            </div>
 
-        <form class="form-inline" ng-show="user">
+          </form>
+        </div>
+
+        <!--<form class="form-inline" ng-show="user">
           <div class="H6 col-sm-5 col-sm-offset-3 text-right">
             Hello !!! {{user.name}}
+            <input type="submit" value="Log Out" ng-click="logout()"/>
           </div>
-          <div class="form-group">
-            <div class="col-sm-3 ">
-              <input type="submit" value="Log Out" class="btn btn-primary" ng-click="logout()"/>
-            </div>
-          </div>
-        </form>
+        </form>-->
 
         <ul class="sn-quick-menu">
           <li class="sn-mytaobao menu-item j_MyTaobao">
             <div class="sn-menu">
               <input type="text" placeholder="name..." ng-model="name"/>
                 <span >
-                    <button  type="button"  style="border-color: #999 #999;border-style:solid;border-width:1px;" ng-click="searchProduct(name)"><font color="#999">Search</font></button>
+                    <button type="button" style="border-color: #999 #999;border-width:1px;" ng-click="searchProduct(name)"><font color="#999">Search</font></button>
                 </span>
             </div>
           </li>
-          <li class="sn-cart mini-cart menu"><i class="mui-global-iconfont">󰅈</i>
+          <!--<li class="sn-cart mini-cart menu"><i class="mui-global-iconfont">󰅈</i>
             <a rel="nofollow" target="_top" href="" class="sn-cart-link" id="mc-menu-hd">Shopping Cart<span class="mc-count mc-pt3">0</span>Piece</a>
-          </li>
+          </li>-->
           <li class="sn-favorite menu-item">
             <div class="sn-menu">
               <a rel="nofollow" target="_top" href="" class="menu-hd" tabindex="0" aria-haspopup="menu-8" aria-label="">Order<b></b></a>
@@ -48,22 +134,23 @@
 
           <!--LANGUAGE-CONTROLLER-->
           <li class="sn-seller menu-item">
-            <div class="sn-menu J_DirectPromo">
+            <div class="sn-menu J_DirectPromo" >
               <a target="_top" href="" class="menu-hd" tabindex="0" aria-haspopup="menu-10" aria-label="">Language<b></b></a>
-              <div class="menu-bd sn-seller-lazy" role="menu" aria-hidden="true" id="menu-10">
-                <ul ng-controller="LanguageController">
+              <div class="menu-bd sn-seller-lazy" role="menu" aria-hidden="true" id="menu-10" style="width: 81px;" ng-controller="LanguageController">
+                <ul style="margin-left: -30px;">
                   <li ng-class="{'active':currentLocale== 'en'}"><a href="" ng-click="changeLanguage('en')">EN </a></li>
                   <li ng-class="{'active':currentLocale== 'fr'}"><a href="" ng-click="changeLanguage('fr')">FR</a></li>
+                  <li ng-class="{'active':currentLocale== 'th'}"><a href="" ng-click="changeLanguage('th')">TH</a></li>
                 </ul>
               </div>
             </div>
           </li>
           <li class="sn-sitemap">
             <div class="sn-menu">
-              <h3 class="menu-hd" tabindex="0" aria-haspopup="menu-12"><span><font size="2">Web Guide</font> </span><b></b></h3>
+              <h3 class="menu-hd" tabindex="0" aria-haspopup="menu-12" style="margin-top: -5px;"><span><font size="2">Web Guide</font> </span><b></b></h3>
               <div data-spm="a2228l4" class="menu-bd sn-sitemap-lazy sn-sitemap-bd" role="menu" aria-hidden="true" id="menu-12">
                 <div class="site-cont site-hot">
-                  <h2>Most Popular</span></h2>
+                  <h2 style="visibility: visible;">Most Popular</h2>
                   <ul class="site-list">
                     <li><a href="">Coffee</a></li>
                     <li><a href="">Rice</a></li>
@@ -74,18 +161,18 @@
                     </ul>
                 </div>
                 <div class="site-cont site-market">
-                  <h2>Natural Farm</span></h2>
+                  <h2 style="visibility: visible;">Natural Farm</h2>
                   <ul class="site-list">
                     <li><a href="">1</a></li>
                     <li><a href="">2</a></li>
-                    <li><a href="">3<i class="sn-sitemap-icon  sn-sitemap-icon-hot "></i> </a></li>
+                    <li><a href="">3<i class="sn-sitemap-icon  sn-sitemap-icon-Zhot "></i> </a></li>
                     <li><a href="">4<i class="sn-sitemap-icon  sn-sitemap-icon-hot "></i> </a></li>
                     <li><a href="">5</a></li>
                     <li><a href="">6</a></li>
                     </ul>
                 </div>
                 <div class="site-cont site-brand">
-                  <h2>Local Culture</span></h2>
+                  <h2 style="visibility: visible;">Local Culture</h2>
                   <ul class="site-list">
                     <li><a href="">Enviroment</a></li>
                     <li><a href="">Situation</a></li>
@@ -94,7 +181,7 @@
                     </ul>
                 </div>
                 <div class="site-cont site-help">
-                  <h2>About Us</span></h2>
+                  <h2 style="visibility: visible;">About Us</h2>
                   <ul class="site-list"> <li><a href="">Help the-local </a></li>
                     <li><a href="">Safty</a></li>
                     <li><a href="">Quality </a></li>
@@ -102,6 +189,12 @@
                 </div>
               </div>
             </div>
+          </li>
+          <li class="sn-sitemap">
+          <div class="site-cont site-help">
+            <!--<button id="login">Login</button>-->
+            <button id="reg" style="border: none;"><font color="#999">Register</font></button>
+          </div>
           </li>
         </ul>
       </div>

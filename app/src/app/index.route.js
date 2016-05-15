@@ -22,9 +22,14 @@
       controller: 'listProductController',
       controllerAs: 'vm'
     }).
-    when('/shoppingCart/:id',{
+    when('/shoppingCart',{
       templateUrl: 'app/shoppingcart/shoppingCart.html',
       controller: 'showShoppingCartController',
+      controllerAs: 'vm'
+    }).
+    when('/searchProduct',{
+      templateUrl: 'app/product/productList.html',
+      controller: 'listProductController',
       controllerAs: 'vm'
     }).
     otherwise({redirectTo: '/listProduct'});
