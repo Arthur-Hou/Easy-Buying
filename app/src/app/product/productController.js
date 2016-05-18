@@ -97,8 +97,8 @@
         flowFiles.opts.query ={productid:productid};
         flowFiles.upload();
         $rootScope.editSuccess = true;
-        $location.path("listProduct");
-        vm.$apply();
+        $location.path("/listProduct");
+        /*vm.$apply();*/
       });
     }
    /* vm.editProduct = function () {
