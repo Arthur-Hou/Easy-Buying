@@ -15,6 +15,7 @@ import java.util.*;
 /**
  * Created by Dto on 2/11/2015.
  */
+
 @Component
 @Profile("db.init")
 public class DatabaseInitializationBean implements InitializingBean {
@@ -40,6 +41,7 @@ public class DatabaseInitializationBean implements InitializingBean {
                 new Product(10l, "ข้าวขาว", "GABA rice", 40.00, ImageUtil.resizeImage(ImageUtil.getImage("pic/rice3.png"), 200))
         };
         productRepository.save(Arrays.asList(initProduct));
+        productRepository.save(new Product(1l,"Rice","Natural , with fibrous texture and appetising flavour.", 100.00));
 
 
         ShoppingCart shoppingCart = new ShoppingCart();

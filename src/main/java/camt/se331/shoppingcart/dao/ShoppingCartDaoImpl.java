@@ -23,7 +23,7 @@ public class ShoppingCartDaoImpl implements ShoppingCartDao {
 
     @Override
     public List<ShoppingCart> getShoppingCarts() {
-        return null;
+        return shoppingCartRepository.findAll();
     }
 
     @Override
@@ -43,6 +43,9 @@ public class ShoppingCartDaoImpl implements ShoppingCartDao {
 
     @Override
     public ShoppingCart deleteShoppingCart(ShoppingCart shoppingCart) {
+      /*  return shoppingCartRepository.delete(shoppingCart);
+        shoppingCart.setId(null);
+        return shoppingCart;*/
         return null;
     }
 }

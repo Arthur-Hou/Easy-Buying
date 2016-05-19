@@ -5,6 +5,7 @@ import camt.se331.shoppingcart.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,6 +14,7 @@ import java.util.Set;
 /**
  * Created by Dto on 4/19/2015.
  */
+@CrossOrigin
 public class SecurityUser extends User implements UserDetails {
     private static final long serialVersionUID = 1L;
     public SecurityUser(User user){

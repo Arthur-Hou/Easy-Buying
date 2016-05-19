@@ -110,12 +110,12 @@
 
         <ul class="sn-quick-menu">
           <li class="sn-mytaobao menu-item j_MyTaobao">
-            <div class="sn-menu">
-              <input type="text" placeholder="name..." ng-model="name"/>
+            <!--<div class="sn-menu" ng-controller="listProductController">
+              <input type="text" placeholder="name..." ng-model="input"/>
                 <span >
-                    <button type="button" style="border-color: #999 #999;border-width:1px;" ng-click="searchProduct(name)"><font color="#999">Search</font></button>
+                    <button type="button" style="border-color: #999 #999;border-width:1px;" ng-click="vm.searchProduct(name)"><font color="#999">Search</font></button>
                 </span>
-            </div>
+            </div>-->
           </li>
           <!--<li class="sn-cart mini-cart menu"><i class="mui-global-iconfont">󰅈</i>
             <a rel="nofollow" target="_top" href="" class="sn-cart-link" id="mc-menu-hd">Shopping Cart<span class="mc-count mc-pt3">0</span>Piece</a>
@@ -136,11 +136,11 @@
           <li class="sn-seller menu-item">
             <div class="sn-menu J_DirectPromo" >
               <a target="_top" href="" class="menu-hd" tabindex="0" aria-haspopup="menu-10" aria-label="">Language<b></b></a>
-              <div class="menu-bd sn-seller-lazy" role="menu" aria-hidden="true" id="menu-10" style="width: 81px;" ng-controller="LanguageController">
+              <div class="menu-bd sn-seller-lazy" role="menu" aria-hidden="true" id="menu-10" style="width: 81px;" ng-controller="languageController as vm">
                 <ul style="margin-left: -30px;">
-                  <li ng-class="{'active':currentLocale== 'en'}"><a href="" ng-click="changeLanguage('en')">EN </a></li>
-                  <li ng-class="{'active':currentLocale== 'fr'}"><a href="" ng-click="changeLanguage('fr')">FR</a></li>
-                  <li ng-class="{'active':currentLocale== 'th'}"><a href="" ng-click="changeLanguage('th')">TH</a></li>
+                  <li ng-class="{'active':vm.currentLocale== 'en'}"><a href="" ng-click="vm.changeLanguage('en')">EN </a></li>
+                  <li ng-class="{'active':vm.currentLocale== 'fr'}"><a href="" ng-click="vm.changeLanguage('fr')">FR</a></li>
+                  <li ng-class="{'active':vm.currentLocale== 'th'}"><a href="" ng-click="vm.changeLanguage('th')">TH</a></li>
                 </ul>
               </div>
             </div>

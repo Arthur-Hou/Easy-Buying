@@ -3,6 +3,7 @@ package camt.se331.shoppingcart.config.security;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import java.io.IOException;
  * @author Philip W. Sorst <philip@sorst.net>
  */
 @Component
+@CrossOrigin
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint
 {
 

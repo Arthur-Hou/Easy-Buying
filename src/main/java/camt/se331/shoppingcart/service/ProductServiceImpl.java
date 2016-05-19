@@ -1,5 +1,6 @@
 package camt.se331.shoppingcart.service;
 
+import camt.se331.shoppingcart.dao.DbProductDao;
 import camt.se331.shoppingcart.dao.ProductDao;
 import camt.se331.shoppingcart.entity.Image;
 import camt.se331.shoppingcart.entity.Product;
@@ -14,6 +15,7 @@ import java.awt.image.DataBufferByte;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -23,7 +25,7 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    ProductDao productDao;
+    ProductDao productDao=new DbProductDao();
     @Override
     public List<Product> getProducts() {
         return productDao.getProducts();
@@ -66,5 +68,17 @@ public class ProductServiceImpl implements ProductService {
         return product;
     }
 
-
+    @Override
+    @Transactional
+    public Product removeImage(Product product, Long imageid) {
+        Iterator<Image> imgitr = product.getImages().iterator();
+        while (imgitr.hasNext()){
+            Image image = imgitr.next();
+            if (image.getId().intValue() == imageid.intValue()){
+                product.getImages().remove(image);
+            }
+        }
+        productDao.updateProduct(product);
+        return product;
+    }
 }

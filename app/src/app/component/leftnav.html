@@ -9,7 +9,7 @@
         	<a href="#/listProduct">All products</a>
     	</li>
       <li ng-class="{true: 'active'}[menuActive('/shoppingCart')]">
-        <a href="#/shoppingCart" ng-show="hasRole('Customer')">Shopping Cart</a>
+        <a href="#/shoppingCart/:id"ng-show="hasRole('Customer')">Shopping Cart</a>
       </li>
       <li ng-class="{true: 'active'}[menuActive('/shoppingCart')]">
         <a href="#/shoppingCart" ng-show="hasRole('WholeSale')">Shopping Cart</a>

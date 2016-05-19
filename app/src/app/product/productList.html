@@ -13,7 +13,7 @@
         <span aria-hidden="true">&times;</span></button>
       <strong>Success!</strong> Success delete the product
     </div>
-  <div cg-busy="{promise:vm.queryPromise,message:'Loading',backdrop:true,minDuration:1000}">
+  <div ><!--cg-busy="{promise:vm.queryPromise,message:'Loading',backdrop:true,minDuration:1000}"-->
     <div class="panel panel-default">
       <!-- Default panel contents -->
       <div class="panel-heading">Products</div>
@@ -22,52 +22,66 @@
         </div>
         <!-- /.col-lg-6 -->
       </div>
-
-
+      <div>
+      search:  <input type="text" placeholder="name..." ng-model="input"/>
       <!-- Table -->
+
       <table class="table table-hover">
         <tr>
           <th>#</th>
           <th translate>listProduct.name</th>
           <th translate>listProduct.description</th>
           <th class="text-right" translate>listProduct.netPrice</th>
-          <th class="text-right" translate>listProduct.price</th>
+          <!--<th class="text-right" translate>listProduct.price</th>-->
           <th class="text-center" translate>listProduct.picture</th>
-          <th translate ><!--ng-show="hasRole('user')"-->listProduct.edit</th>
+          <th class="text-center" ng-show="hasRole('Customer')" translate >listProduct.add</th>
+          <th translate ng-show="hasRole('admin')">listProduct.edit</th>
           <th translate ng-show="hasRole('admin')">listProduct.delete</th>
 
+
         </tr>
-        <tr ng-repeat="product in vm.products">
+        <tr ng-repeat="product in vm.products | filter:input">
           <td>{{$index+1}}</td>
           <td>{{product.name}}</td>
           <td>{{product.description}}</td>
           <td class="text-right">{{product.netPrice | number}}</td>
-          <td class="text-right">{{product.totalPrice | number}}</td>
+          <!--<td class="text-right">{{product.totalPrice | number}}</td>-->
           <td>
             <div ng-repeat="image in product.images" class="text-center" class="thumbnail">
               <img ng-src="data:{{image.contentType}};base64,{{image.content}}">
-    </div>
+             </div>
           </td>
+         <!-- <td>
+            <a ng-click="cart.updateCart(product.name, product.price, 1)" href=""> add to cart </a>
+          </td>-->
           <!--<td class="text-center" ng-show="hasRole('user')"><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit"
                                                                                    aria-hidden="true"></span></a></td>-->
-          <td class="text-center" ng-show="hasRole('Customer')"><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit"
-                                                                                                             aria-hidden="true"  ng-click="addProduct(product.id)"></span></a></td>
+          <!--<td class="text-center" ng-show="hasRole('Customer')"><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit"
+                                                                                                             aria-hidden="true"  ng-click="addProduct(product.id)"></span></a></td>-->
+          <td class="text-center" ng-show="hasRole('Customer')"><a ng-href="#/shoppingCart/{{product.id}}"> <span class="glyphicon glyphicon-edit"
+                                                                                                                 aria-hidden="true"  ng-click="vm.addProduct(product.id)"></span></a></td>
           <td class="text-center" ng-show="hasRole('WholeSale')"><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit"
                                                                                                              aria-hidden="true"></span></a></td>
           <td class="text-center" ng-show="hasRole('Retail')"><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit"
                                                                                                              aria-hidden="true"></span></a></td>
           <td class="text-center" ng-show="hasRole('admin')"><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit"
-                                                                                                               aria-hidden="true"></span></a></td>
+                                                                                                               aria-hidden="true"  ng-click="vm.editProduct()"></span></a></td>
           <!--<td class="text-center" ng-show="hasRole('ForeignUser')"><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit"
                                                                                                              aria-hidden="true"></span></a></td>-->
           <td class="text-center" ng-show="hasRole('admin')"><a ng-href="#/listProduct"><span class="glyphicon glyphicon-remove-circle"
                                                                    aria-hidden="true"
-                                                                   ng-click="deleteProduct(product.id)"></span></a></td>
+                                                                   ng-click="vm.deleteProduct(product.id)"></span></a></td>
         </tr>
         <tr>
           <th></th>
-          <th><strong translate>listProduct.total</strong></th>
-          <th></th>
+          <td colspan="5" class="tdRight">
+            <a ng-disabled="cart.getTotalCount() &lt; 1" title="go to shopping cart" href="default.htm#/cart" disabled="disabled" style="margin-right: -900px;">
+              <i class="icon-shopping-cart"></i>
+              <b class="ng-binding">0</b> items, <b class="ng-binding">$0.00</b>
+            </a>
+          </td>
+          <!--<th><strong translate>listProduct.total</strong></th>
+          <th></th>-->
           <th class="text-right">{{totalNetPrice | number}}</th>
           <th></th>
           <th></th>
@@ -75,5 +89,6 @@
 
         </tr>
       </table>
+        </div>
     </div>
   </div>

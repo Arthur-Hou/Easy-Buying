@@ -27,9 +27,9 @@
       simultaneousUploads: 4,
       singleFile: false
     };
-    // flowFactoryProvider.on('catchAll', function ($log) {
-    //   console.log('catchAll', arguments);
-    // });
+     flowFactoryProvider.on('catchAll', function ($log) {
+       console.log('catchAll', arguments);
+     });
     // Can be used with different implementations of Flow.js
     // flowFactoryProvider.factory = fustyFlowFactory;
   }

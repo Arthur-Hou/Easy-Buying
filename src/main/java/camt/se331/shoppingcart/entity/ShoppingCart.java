@@ -6,7 +6,9 @@ import org.hibernate.annotations.CascadeType;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Dto on 2/7/2015.
@@ -16,6 +18,54 @@ public class ShoppingCart {
     @Id
     @GeneratedValue
     Long id;
+    String name;
+    String description;
+    Double totalPrice;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    Set<Image> images = new HashSet<>();
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public Set<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(Set<Image> images) {
+        this.images = images;
+    }
+
+    public ShoppingCart(String name, String description, Double totalPrice, Set<Image> images, List<SelectedProduct> selectedProducts, Date purchaseDate) {
+        this.name = name;
+        this.description = description;
+        this.totalPrice = totalPrice;
+        this.images = images;
+        this.selectedProducts = selectedProducts;
+        this.purchaseDate = purchaseDate;
+    }
 
     @OneToMany(fetch = FetchType.EAGER)
     @Cascade(CascadeType.ALL)

@@ -3,6 +3,7 @@ package camt.se331.shoppingcart.controller;
 import camt.se331.shoppingcart.entity.Image;
 import camt.se331.shoppingcart.entity.Product;
 import camt.se331.shoppingcart.service.ProductService;
+import camt.se331.shoppingcart.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ import java.util.Iterator;
 @RequestMapping("/productImage")
 public class ProductImageController {
     @Autowired
-    ProductService productService;
+    ProductService productService = new ProductServiceImpl();
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     @ResponseBody
     public Product addImage(HttpServletRequest request,
@@ -47,5 +48,12 @@ public class ProductImageController {
 
 
         return product;
+    }
+    @RequestMapping(value = "/remove", method = RequestMethod.DELETE)
+    @ResponseBody
+    public Product edit(@RequestParam("productid") Long productId,
+                        @RequestParam("imageid") Long imageid){
+        Product product = productService.getProduct(productId);
+        return productService.removeImage(product,imageid);
     }
 }

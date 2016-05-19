@@ -8,9 +8,9 @@
   /** @ngInject */
   function urlLanguageStorage($location) {
     return {
-      put: function () {
+      put: function (name,value) {
       },
-      get: function () {
+      get: function (name) {
         return $location.search()['lang']
       }
     };

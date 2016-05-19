@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Dto on 2/9/2015.
  */
-
+@Profile("db.dbdao")
 @Repository
 public class DbProductDao implements ProductDao{
     @Autowired

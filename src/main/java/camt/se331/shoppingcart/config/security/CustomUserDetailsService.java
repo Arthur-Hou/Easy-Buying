@@ -7,11 +7,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 /**
  * Created by Dto on 4/19/2015.
  */
 @Component
+@CrossOrigin
 public class CustomUserDetailsService implements UserDetailsService {
     @Autowired
     private UserServiceImpl userService;

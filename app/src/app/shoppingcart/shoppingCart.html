@@ -1,5 +1,5 @@
 
-<div class="panel panel-default">
+<div class="panel panel-default" ng-controller="shoppingCartController as vm">
     <!-- Default panel contents -->
     <div class="panel-heading">ShoppingCart</div>
     <div class="panel-body">
@@ -21,14 +21,14 @@
 
 
                 </tr>
-                <tr ng-repeat="selectedProduct in cart.selectedProducts">
+                <tr ng-repeat="selectedProduct in vm.cart.selectedProducts">
                     <td>{{$index+1}}</td>
-                    <td>{{vm.selectedProduct.product.name}}</td>
-                    <td>{{vm.selectedProduct.product.description}}</td>
+                    <td>{{selectedProduct.product.name}}</td>
+                    <td>{{selectedProduct.product.description}}</td>
                     <td class=" col-xs-1"><input ng-model="selectedProduct.amount" class="form-control text-right" id="selectedproductamount"
                                placeholder="amount" name="productdescription" required/></td>
-                    <td class="text-right">{{vm.selectedProduct.product.netPrice | number:2}}</td>
-                    <td class="text-right">{{vm.totalEach($index) |number:2}}</td>
+                    <td class="text-right">{{selectedProduct.product.netPrice | number:2}}</td>
+                    <td class="text-right">{{totalEach($index) |number:2}}</td>
                 </tr>
                 <tr>
                     <th></th>
@@ -40,7 +40,7 @@
                 </tr>
             </table>
             <div class="panel-body text-center">
-                <a href ng_click="vm.updateCart()" class="btn btn-primary ">update cart</a>
+                <a href ng-click="vm.updateCart()" class="btn btn-primary ">update cart</a>
             </div>
         </div>
     </form>

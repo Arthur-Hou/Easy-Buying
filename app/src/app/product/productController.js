@@ -27,6 +27,7 @@
 
         $rootScope.addSuccess = true;
         $location.path("listProduct");
+        /*vm.$apply();*/
       });
     }
 
@@ -81,13 +82,45 @@
      }
     )
 
-
-    vm.editProduct = function () {
+    vm.editProduct = function (flowFiles) {
+      //$http.put("/product", $scope.product).then(function () {
+      var pd = angular.copy(vm.product);
+      productService.update({
+        id:vm.product.id,
+        name:vm.product.name,
+        description:vm.product.description,
+        totalPrice:vm.product.totalPrice
+      },function(data){
+        var productid = data.id;
+        flowFiles.opts.target = 'http://localhost:8080/productImage/add';
+        flowFiles.opts.testChunks = false;
+        flowFiles.opts.query ={productid:productid};
+        flowFiles.upload();
+        $rootScope.editSuccess = true;
+        $location.path("listProduct");
+        vm.$apply();
+      });
+    }
+   /* vm.editProduct = function () {
       //$http.put("/product", $scope.product).then(function () {
       productService.update({id: vm.product.id}, vm.product, function () {
         $rootScope.editSuccess = true;
         $location.path("listProduct");
       });
+    }*/
+    vm.removeImage = function (pId, imgId){
+      var ans = confirm("Do you want to delete the image?");
+      if(ans == true){
+        $http.delete("http://localhost:8080/productImage/remove?productid="+pId+"&imageid="+imgId).then(function (){
+          $http.get("http://localhost:8080/product"+pId).success(function (data){
+            vm.product = data;
+          });
+        }, function(){
+          console.log("FAILED")
+        });
+      }
     }
   }
+
+
 })();

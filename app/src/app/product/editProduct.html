@@ -1,18 +1,24 @@
 <div class="row-fluid">
-    <div class="row" ng-show="vm.addPerson">
+    <div class="row" ng-show="vm.addPerson" ng-controller="addProductController as vm">
         <h1>Add new product</h1>
     </div>
-    <div class="row" ng-show="vm.editPerson">
+    <div class="row" ng-show="vm.editPerson" ng-controller="editProductController as vm" >
         <h1>Edit Product</h1>
+      <div style="position: relative" ng-repeat="image in product.images" class="text-center">
+        <img ng-src="data:{{image.contentType}};base64,{{image.content}}" class="thumbnail"/>
+        <button style="position: absolute; top: 5px; left: 5px; z-index: 999" href="#" ng-click="removeImage(product.id, image.id)">
+          <i class="glyphicon glyphicon-remove-circle"></i>
+        </button>
+      </div>
     </div>
     <div class="col-md-4">
-        <form name="editform" novalidate flow-init>
-            <div class="form-group">
+        <form name="editform" novalidate flow-init >
+            <div class="form-group" >
                 <!-- Sidebar content-->
                 <label for="productname">name :</label>
                 <input ng-model="vm.product.name" class="form-control" id="productname" name="productname" placeholder="name" required/>
 
-                <div class="alert alert-danger" role="alert" ng-show="vm.editform.productname.$error.required">
+                <div class="alert alert-danger" role="alert" ng-show="editform.productname.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
                     Product name is Required!
@@ -23,7 +29,7 @@
                 <input ng-model="vm.product.description" class="form-control" id="productdescription"
                        placeholder="description" name="productdescription" required/>
 
-                <div class="alert alert-danger" role="alert" ng-show="vm.editform.productdescription.$error.required">
+                <div class="alert alert-danger" role="alert" ng-show="editform.productdescription.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
                     Description is Required!
@@ -35,19 +41,19 @@
                 <input ng-model="vm.product.totalPrice" name="productprice" class="form-control" id="productprice"
                        placeholder="price" type="number" required/>
 
-                <div class="alert alert-danger" role="alert" ng-show="vm.editform.productprice.$error.required">
+                <div class="alert alert-danger" role="alert" ng-show="editform.productprice.$error.required">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
                     Price is Required!
                 </div>
-                <div class="alert alert-danger" role="alert" ng-show="vm.editform.productprice.$error.number">
+                <div class="alert alert-danger" role="alert" ng-show="editform.productprice.$error.number">
                     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                     <span class="sr-only">Error:</span>
                     Enter the number!!
                 </div>
 
             </div>
-            <div class="form-group">
+            <div class="form-group" >
                 <input type="file" flow-btn/>
                 <table>
                     <tr ng-repeat="file in $flow.files">
@@ -58,8 +64,8 @@
                 </table>
             </div>
 
-            <button type="submit" class="btn btn-default" ng-click="vm.addProduct($flow)"> <!--ng-show="vm.addPerson"-->Add</button>
-            <button type="submit" class="btn btn-default" ng-click="vm.editProduct()"><!-- ng-show="vm.editPerson"-->Edit</button>
+            <button type="submit" class="btn btn-default" ng-click="vm.addProduct($flow)"ng-show="vm.addPerson">Add</button>
+            <button type="submit" class="btn btn-default" ng-click="vm.editProduct($flow)" ng-show="vm.editPerson">Edit</button>
         </form>
     </div>
 </div>

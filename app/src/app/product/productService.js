@@ -12,7 +12,12 @@
   function productService($resource){
     return $resource('/product/:id', { id: '@_id' }, {
         update: {
-            method: 'PUT' // this method issues a PUT request
+            method: 'PUT', // this method issues a PUT request
+            params:{
+            name:'@name',
+            description: '@description',
+            totalPrice:'@totalPrice'
+          }
         }});
 
   }

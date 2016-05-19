@@ -10,28 +10,28 @@
     when('/addProduct',{
       templateUrl: 'app/product/editProduct.html',
       controller: 'addProductController',
-      controllerAs: 'addProductController'
-    }).
+      controllerAs: 'vm'
+  }).
     when('/editProduct/:id',{
       templateUrl: 'app/product/editProduct.html',
       controller: 'editProductController',
-      controllerAs: 'editProductController'
+      controllerAs: 'vm'
     }).
     when('/listProduct',{
       templateUrl: 'app/product/productList.html',
       controller: 'listProductController',
       controllerAs: 'vm'
     }).
-    when('/shoppingCart',{
+    when('/shoppingCart/:id',{
       templateUrl: 'app/shoppingcart/shoppingCart.html',
-      controller: 'showShoppingCartController',
+      controller: 'shoppingCartController',
       controllerAs: 'vm'
     }).
-    when('/searchProduct',{
+  /*  when('/searchProduct',{
       templateUrl: 'app/product/productList.html',
       controller: 'listProductController',
       controllerAs: 'vm'
-    }).
+    }).*/
     otherwise({redirectTo: '/listProduct'});
 
   }

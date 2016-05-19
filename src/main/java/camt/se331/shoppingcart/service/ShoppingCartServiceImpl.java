@@ -1,6 +1,7 @@
 package camt.se331.shoppingcart.service;
 
 import camt.se331.shoppingcart.dao.ShoppingCartDao;
+import camt.se331.shoppingcart.dao.ShoppingCartDaoImpl;
 import camt.se331.shoppingcart.entity.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ import java.util.List;
 public class ShoppingCartServiceImpl implements ShoppingCartService{
 
     @Autowired
-    ShoppingCartDao shoppingCartDao;
+    ShoppingCartDao shoppingCartDao = new ShoppingCartDaoImpl();
 
     @Override
     @Transactional
@@ -26,7 +27,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 
     @Override
     public List<ShoppingCart> getShoppingCarts() {
-        return null;
+        return shoppingCartDao.getShoppingCarts();
     }
 
     @Override

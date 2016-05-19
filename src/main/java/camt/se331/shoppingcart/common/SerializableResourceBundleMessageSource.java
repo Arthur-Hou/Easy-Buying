@@ -1,6 +1,7 @@
 package camt.se331.shoppingcart.common;
 
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Locale;
 import java.util.Properties;
@@ -8,6 +9,7 @@ import java.util.Properties;
 /**
  * Created by Dto on 3/16/2015.
  */
+
 public class SerializableResourceBundleMessageSource extends ReloadableResourceBundleMessageSource {
     public Properties getAllProperties(Locale locale) {
         clearCacheIncludingAncestors();
